@@ -26,7 +26,7 @@ class XMagentoTags implements MultipleHeaderInterface
     /**
      * @param string|null $value
      */
-    public function __construct(string $value = null)
+    public function __construct(?string $value = null)
     {
         if ($value) {
             HeaderValue::assertValid($value);
@@ -68,7 +68,7 @@ class XMagentoTags implements MultipleHeaderInterface
      * @throws InvalidArgumentException
      * @return string
      */
-    public function toStringMultipleHeaders(array $headers): array
+    public function toStringMultipleHeaders(array $headers): string
     {
         $name = $this->getFieldName();
         $values = array($this->getFieldValue());
